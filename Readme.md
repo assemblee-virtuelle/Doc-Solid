@@ -11,36 +11,36 @@ Documentation Node-Solid-Server
 Installation
 ---
 
-- [Command line](https://) (basic)!
-- [Command line](https://) (test-server)!
-- [Library]()!
+- ~~[Command line](https://) (basic)!~~
+- ~~[Command line](https://) (test-server)!~~
+- ~~[Library]()!~~
 
 Authentication
 ---
 
-- [Register](https://)!
-- [Login ](https://)!
+- ~~[Register](https://)!~~
+- ~~[Login ](https://)!~~
 
 API (Resource edition)
 ---
 
-- [Create]()!
-- [Read]()!
-- [Edit]()!
-- [Delete]()!
+- ~~[Create]()!~~
+- ~~[Read]()!~~
+- ~~[Edit]()!~~
+- ~~[Delete]()!~~
 
 WAC (Web ACLs)
 ---
 
-- [Overview]()!
-- [Edit a resource's Acl]()!
+- ~~[Overview]()!~~
+- ~~[Edit a resource's Acl]()!~~
 
 How do they work (Internally)
 ---
 
-- [API]()!
-- [ACLs]()!
-- [Authentication]()!
+- ~~[API]()!~~
+- ~~[ACLs]()!~~
+- ~~[Authentication]()!~~
 
 
 **You can contribute to the documentation directly [here](https://hackmd.io/jUyCPhlSQfmgh6vfn1ZFaA?both)**
@@ -54,7 +54,7 @@ Installation
 
 - [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-basique) (Installation normale)
 - [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-serveur-de-test) (Serveur de test)
-- [Librairie]()!
+- ~~[Librairie]()!~~
 
 Authentification
 ---
@@ -65,24 +65,24 @@ Authentification
 API (Edition de ressource)
 ---
 
-- [Créer]()!
-- [Lire]()!
-- [Editer]()!
-- [Supprimer]()!
+- ~~[Créer]()!~~
+- ~~[Lire]()!~~
+- ~~[Editer]()!~~
+- ~~[Supprimer]()!~~
 
 WAC (Web ACLs)
 ---
 
 - [Résumé](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#résumé)
 - [Fonctionnement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#fonctionnement)
-- [Editer l'Acl d'une ressource]() (exemple)!
+- ~~[Editer l'Acl d'une ressource]() (exemple)!~~
 
 Comment ça marche ? (à l'intérieur)
 ---
 
-- [API]()!
-- [ACLs]()!
-- [Authentification]()!
+- ~~[API]()!~~
+- ~~[ACLs]()!~~
+- ~~[Authentification]()!~~
 
 
 **Vous pouvez contribuer directement à la documentation [ici](https://hackmd.io/jUyCPhlSQfmgh6vfn1ZFaA?both)**
