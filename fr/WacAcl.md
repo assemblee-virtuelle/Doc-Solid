@@ -1,6 +1,8 @@
 WAC ACLs
 ===
 
+**Vous pouvez contribuer directement à cette documentation [ici](https://hackmd.io/JxLDg2DwSdqNXLHyqoqaZw?both)**
+
 # Résumé
 
 ## WAC
@@ -16,8 +18,8 @@ WAC est composé de plusieurs éléments clés :
 ## ACLs
 
 Dans un système utilisant les Web Access Control, chaque ressource a son ensemble de déclarations d'Authorisations décrivants : 
-1. Qui a accès a cette ressource (qui sont les *[agents](#Description-des-agents)* autorisés)
-2. Quel type (ou [*modes*](#Modes-d’Accès)) d'accès ils possèdent
+1. Qui a accès a cette ressource (qui sont les *[agents](#description-des-agents)* autorisés)
+2. Quel type (ou [*modes*](#modes-d’accès)) d'accès ils possèdent
 
 Ces autorisations sont soit spécifiés explicitement pour une ressource, ou (le plus souvent) hérités de leur dossier ou conteneur parent. Dans tout les cas, les déclarations d'Autorisations sont placés dans des document WAC séparés appelés Access Control List Resouces (Ou simplement ACLs).
 
@@ -65,7 +67,7 @@ Un exemple d'ACL pour un conteneur :
 
 Pour un contrôle plus poussé, les utilisateurs peuvent assigner un ensemble de permissions pour chaque ressource individuelle (qui écrase les permissions de son conteneur parent)
 
-Exemple d'ACL : 
+#### Exemple d'ACL : 
 
 ```turtle
 # Contents of https://alice.databox.me/docs/file1.acl
@@ -109,7 +111,7 @@ Notez que la relation `acl` link utilise des chemins URLs relatifs (Le chemin UR
 Les clients NE DOIVENT PAS déterminer la location d'une ressource ACL par dérivation d'une URL d'un document web. Par exemple, prenons un document ayant pour URL `/docs/file1`, les clients ne doivent pas présumer que la ressource ACL est située à `/docs/file1.acl`, simplement en utilisant `.acl` comme suffixe.
 La convention de nommage choisie pour les ressource ACL peut être différente pour chaque implémentation individuelle (ou encore chaque serveur). Si un serveur trouve la ressource ACL en ajoutant le suffixe `.acl`, un autre serveur pourrait placer les ressources ACL dans un sous-conteneur (dans l'exemple ci-dessus, située a `/docs/.acl/file1.acl`)
 
-## Accès public (Tout les [agents](#Description-des-agents))
+## Accès public (Tout les [agents](#description-des-agents))
 
 Pour spécifier un accès public a une ressource, donc donner l'accès a *tout le monde* (par exemple votre profil WebID est en lecture publique), vous pouvez utiliser `acl:agentClass foaf:Agent` pour dire que vous donnez l'accès de la classe à *tout* les agents (le public) 
 Par exemple : 
@@ -131,7 +133,7 @@ Le prédicat `acl:accessTo` spécifie à quelles ressources vous donnez l'accès
 
 Une ressource ACL étant son propre document web, qu'est ce qui controle *qui* a accès à ce dernier ? Théoriquement, un ACL *pourait* avoir son propre ACL (Donc pour `file1.acl` qui controle l'accès au `file1`, `file1.acl.acl` controlerait potentiellement `file1.acl`), on constate rapidement que cette récursivité doit avoir une fin quelque part. 
 
-C'est là que `acl:Control` des [modes d'accès](#Modes-d’Accès) entre en jeu (voir ci-dessous), il spécifie qui peut modifier (ou même lire) la ressource ACL.
+C'est là que `acl:Control` des [modes d'accès](#modes-d’accès) entre en jeu (voir ci-dessous), il spécifie qui peut modifier (ou même lire) la ressource ACL.
 
 ## Modes d'Accès
 
@@ -160,7 +162,7 @@ Dans le WAC, on utilise le terme *Agent* pour identifier *qui* a accès à une r
 
 ### Agent unique
 
-Une autorisation peut donner l'accès à n'importe quel nombre d'agents uniques utilisant le prédicat `acl:agent`, et utilisant leur URI de WebID comme objects. [L'exemple de document WAC ACL](https://) décris précédemment donne l'accès à Alice, comme indiqué par son URI de WebID, `https://alice.databox.me/profile/card#me.`
+Une autorisation peut donner l'accès à n'importe quel nombre d'agents uniques utilisant le prédicat `acl:agent`, et utilisant leur URI de WebID comme objects. [L'exemple de document WAC ACL](#exemple-d’acl-) décris précédemment donne l'accès à Alice, comme indiqué par son URI de WebID, `https://alice.databox.me/profile/card#me.`
 
 ### Groupes d'agents
 

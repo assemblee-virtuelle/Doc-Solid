@@ -4,7 +4,7 @@ Documentation Node-Solid-Server
 `!` **means no doc for the moment**
 
 ### Language :
-[English](#English) - [Français](#Français)
+[English](#English) - [Français](#français)
 
 # English
 
@@ -59,8 +59,8 @@ Installation
 Authentification
 ---
 
-- [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#inscription)
-- [Enregistrement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#Enregistrement)
+- [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#authentification)
+- [Enregistrement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#enregistrement)
 
 API (Edition de ressource)
 ---
@@ -73,8 +73,8 @@ API (Edition de ressource)
 WAC (Web ACLs)
 ---
 
-- [Résumé](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#Résumé)
-- [Fonctionnement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#Fonctionne;ent)
+- [Résumé](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#résumé)
+- [Fonctionnement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#fonctionne;ent)
 - [Editer l'Acl d'une ressource]() (exemple)!
 
 Comment ça marche ? (à l'intérieur)
