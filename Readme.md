@@ -74,7 +74,7 @@ WAC (Web ACLs)
 ---
 
 - [Résumé](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#résumé)
-- [Fonctionnement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#fonctionne;ent)
+- [Fonctionnement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WacAcl.md#fonctionnement)
 - [Editer l'Acl d'une ressource]() (exemple)!
 
 Comment ça marche ? (à l'intérieur)

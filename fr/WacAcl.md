@@ -7,7 +7,7 @@ WAC ACLs
 
 ## WAC
 
-WAC (Web Access Control) est un système de controle d'accès cross-domain. Le concept principal devrait être familier pour les développeurs, vu qu'il est similaire aux controles d'accès utilisés dans des systèmes de fichiers. Son but est de vérifier l'accès aux [agents](#Description-des-agents) (utilisateurs, groupes etc) pour effectuer divers opérations (lire, écrire, supprimer, etc) sur les ressources. 
+WAC (Web Access Control) est un système de controle d'accès cross-domain. Le concept principal devrait être familier pour les développeurs, vu qu'il est similaire aux controles d'accès utilisés dans des systèmes de fichiers. Son but est de vérifier l'accès aux [agents](#description-des-agents) (utilisateurs, groupes etc) pour effectuer divers opérations (lire, écrire, supprimer, etc) sur les ressources. 
 WAC est composé de plusieurs éléments clés : 
 
 1. Les ressources sont identifiés par des URLs, et peuvent référer a n'importe quel document web ou ressource. 
@@ -19,7 +19,7 @@ WAC est composé de plusieurs éléments clés :
 
 Dans un système utilisant les Web Access Control, chaque ressource a son ensemble de déclarations d'Authorisations décrivants : 
 1. Qui a accès a cette ressource (qui sont les *[agents](#description-des-agents)* autorisés)
-2. Quel type (ou [*modes*](#modes-d’accès)) d'accès ils possèdent
+2. Quel type (ou [*modes*](#modes-daccès)) d'accès ils possèdent
 
 Ces autorisations sont soit spécifiés explicitement pour une ressource, ou (le plus souvent) hérités de leur dossier ou conteneur parent. Dans tout les cas, les déclarations d'Autorisations sont placés dans des document WAC séparés appelés Access Control List Resouces (Ou simplement ACLs).
 
@@ -133,7 +133,7 @@ Le prédicat `acl:accessTo` spécifie à quelles ressources vous donnez l'accès
 
 Une ressource ACL étant son propre document web, qu'est ce qui controle *qui* a accès à ce dernier ? Théoriquement, un ACL *pourait* avoir son propre ACL (Donc pour `file1.acl` qui controle l'accès au `file1`, `file1.acl.acl` controlerait potentiellement `file1.acl`), on constate rapidement que cette récursivité doit avoir une fin quelque part. 
 
-C'est là que `acl:Control` des [modes d'accès](#modes-d’accès) entre en jeu (voir ci-dessous), il spécifie qui peut modifier (ou même lire) la ressource ACL.
+C'est là que `acl:Control` des [modes d'accès](#modes-daccès) entre en jeu (voir ci-dessous), il spécifie qui peut modifier (ou même lire) la ressource ACL.
 
 ## Modes d'Accès
 
@@ -162,7 +162,7 @@ Dans le WAC, on utilise le terme *Agent* pour identifier *qui* a accès à une r
 
 ### Agent unique
 
-Une autorisation peut donner l'accès à n'importe quel nombre d'agents uniques utilisant le prédicat `acl:agent`, et utilisant leur URI de WebID comme objects. [L'exemple de document WAC ACL](#exemple-d’acl-) décris précédemment donne l'accès à Alice, comme indiqué par son URI de WebID, `https://alice.databox.me/profile/card#me.`
+Une autorisation peut donner l'accès à n'importe quel nombre d'agents uniques utilisant le prédicat `acl:agent`, et utilisant leur URI de WebID comme objects. [L'exemple de document WAC ACL](#exemple-dacl-) décris précédemment donne l'accès à Alice, comme indiqué par son URI de WebID, `https://alice.databox.me/profile/card#me.`
 
 ### Groupes d'agents
 
