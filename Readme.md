@@ -20,6 +20,9 @@ Authentication
 
 - ~~[Register](https://)!~~
 - ~~[Login ](https://)!~~
+- ~~[WebID Explained]()~~
+- ~~[WebID - TLS]()~~
+- ~~[WebID - OIDC]()~~
 
 API (Resource edition)
 ---
@@ -61,6 +64,9 @@ Authentification
 
 - [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#authentification)
 - [Enregistrement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#enregistrement)
+- [Explication WebID](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WebID.md)
+- ~~[WebID - TLS]()~~
+- ~~[WebID - OIDC]()~~
 
 API (Edition de ressource)
 ---
