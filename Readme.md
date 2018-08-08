@@ -1,10 +1,10 @@
 Documentation Node-Solid-Server
 ===
 
-`!` **means no doc for the moment**
+~~`Crossed`~~ **means no doc for the moment**
 
-### Language :
-[English](#English) - [Français](#français)
+## Language :
+### [English](#english) - [Français](#français)
 
 # English
 

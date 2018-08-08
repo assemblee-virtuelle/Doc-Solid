@@ -10,10 +10,10 @@ WAC ACLs
 WAC (Web Access Control) est un système de controle d'accès cross-domain. Le concept principal devrait être familier pour les développeurs, vu qu'il est similaire aux controles d'accès utilisés dans des systèmes de fichiers. Son but est de vérifier l'accès aux [agents](#description-des-agents) (utilisateurs, groupes etc) pour effectuer divers opérations (lire, écrire, supprimer, etc) sur les ressources. 
 WAC est composé de plusieurs éléments clés : 
 
-1. Les ressources sont identifiés par des URLs, et peuvent référer a n'importe quel document web ou ressource. 
+1. Les ressources sont identifiés par des URIs, et peuvent référer a n'importe quel document web ou ressource. 
 2. Il est *assertif* -- Les politiques de controles d'accès vivent dans des document web réguliers, qui peuvent être exportés/sauvegardés facilement, en utilisant le même méchanisme que pour sauvegarder le reste de vos données. (help in trad needed)
 3. Les utilisateurs et groupes sont identifiés par des URLs (spécifiquement, par des WebIDs)
-4. Il est *cross-domain* -- Tout ses composants, comme les ressources, les WebIDs d'agents, et même les documents contenant la politique de controle d'accès peuvent potentiellement demeurer sur des domaines séparés. En d'autres termes, vous pouvez donner accès a une ressource sur un site à ades utilisateurs et groupes hébergés sur un autre site.
+4. Il est *cross-domain* -- Tout ses composants, comme les ressources, les WebIDs d'agents, et même les documents contenant la politique de controle d'accès peuvent potentiellement demeurer sur des domaines séparés. En d'autres termes, vous pouvez donner accès a une ressource sur un site à des utilisateurs et groupes hébergés sur un autre site.
 
 ## ACLs
 
@@ -109,7 +109,7 @@ Notez que la relation `acl` link utilise des chemins URLs relatifs (Le chemin UR
 
 **Note dans la [spec](https://github.com/solid/web-access-control-spec#acl-resource-location-discovery)** : 
 Les clients NE DOIVENT PAS déterminer la location d'une ressource ACL par dérivation d'une URL d'un document web. Par exemple, prenons un document ayant pour URL `/docs/file1`, les clients ne doivent pas présumer que la ressource ACL est située à `/docs/file1.acl`, simplement en utilisant `.acl` comme suffixe.
-La convention de nommage choisie pour les ressource ACL peut être différente pour chaque implémentation individuelle (ou encore chaque serveur). Si un serveur trouve la ressource ACL en ajoutant le suffixe `.acl`, un autre serveur pourrait placer les ressources ACL dans un sous-conteneur (dans l'exemple ci-dessus, située a `/docs/.acl/file1.acl`)
+La convention de nommage choisie pour les ressource ACL peut être différente pour chaque implémentation individuelle (ou encore chaque serveur). Par exemple, si un serveur trouve la ressource ACL en ajoutant le suffixe `.acl`, un autre serveur pourrait placer les ressources ACL dans un sous-conteneur (dans l'exemple ci-dessus, située a `/docs/.acl/file1.acl`)
 
 ## Accès public (Tout les [agents](#description-des-agents))
 
