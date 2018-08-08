@@ -25,7 +25,7 @@ Sur un serveur distant :
  L'inscription crée un dossier de compte d'utilisateur (POD) dans le chemin du dossier fourni dans `root` lors de l'installation.
 Celui ci sera nommé `alice.nomdedomaine`.
 
-## Enregistrement
+## Connexion
 
 Avant de faire quoi que ce soit d'intéressant (comme créer des dossiers, afficher ou créer des ressources, etc), vous devez vous identifier à votre serveur Solid.
 

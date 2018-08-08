@@ -55,15 +55,16 @@ How do they work (Internally)
 Installation
 ---
 
-- [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-basique) (Installation normale)
+- ~~[Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-basique) (Installation normale)~~
 - [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-serveur-de-test) (Serveur de test)
+- [Docker](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/docker.md)
 - ~~[Librairie]()!~~
 
 Authentification
 ---
 
 - [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#authentification)
-- [Enregistrement](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#enregistrement)
+- [Connexion](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#connexion)
 - [Explication WebID](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WebID.md)
 - ~~[WebID - TLS]()~~
 - ~~[WebID - OIDC]()~~
