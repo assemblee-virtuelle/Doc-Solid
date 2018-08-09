@@ -40,7 +40,7 @@ Pour cela, éditez le fichier `config.json` crée pendant l'initialisation du se
 
 ### Auth en utilisant le client `oidc-web`
 
-Premièrement, installez la librairie [`oidc-web`](https://github.com/anvilresearch/oidc-web) en utilisant `npm`: 
+Premièrement, installez la librairie [`oidc-web`](https://github.com/solid/oidc-web) en utilisant `npm`: 
 
 ```
 npm install oidc-web
