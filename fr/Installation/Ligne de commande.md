@@ -51,6 +51,11 @@ Pour tester le solid-serveur de manière locale en multi-user ( chaque utilisate
     ```
     npm run solid init
     ```
+    ou
+    ```
+    cd bin
+    ./solid init
+    ```
     Ceci crée un fichier de config.
     
     Ex:
