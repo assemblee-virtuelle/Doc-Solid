@@ -66,16 +66,15 @@ Authentification
 - [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#authentification)
 - [Connexion](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#connexion)
 - [Explication WebID](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WebID.md)
-- ~~[WebID - TLS]()~~
-- ~~[WebID - OIDC]()~~
+- [WebID - OIDC](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/OIDC.md)
 
 API (Edition de ressource)
 ---
 
-- ~~[Créer]()!~~
-- ~~[Lire]()!~~
-- ~~[Editer]()!~~
-- ~~[Supprimer]()!~~
+- [Créer](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/API.md#creer)
+- [Lire](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/API.md#lire)
+- [Editer](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/API.md#editer)
+- [Supprimer](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/API.md#supprimer)
 
 WAC (Web ACLs)
 ---

@@ -61,19 +61,19 @@ Pour tester le solid-serveur de manière locale en multi-user ( chaque utilisate
     Ex:
     ```JSON
     {
-        "root": "~/LDP",
-        "port": "8443",
-        "serverUri": "https://localhost:8443",
-        "webid": true,
-        "multiuser": true,
-        "mount": "/",
-        "configPath": "~/LDP/.config",
-        "configFile":"./config.json",
-        "dbPath": "~/LDP/.db",
-        "sslKey": "../localhost.key",
-        "sslCert": "../localhost.cert",
-        "corsProxy": "/proxy",
-        "suffixAcl":".acl"
+        "root": "~/LDP", Chemin vers votre racine du LDP
+        "port": "8443", port du serveur
+        "serverUri": "https://localhost:8443", Uri du serveur
+        "webid": true, Si true, utilise l'authentification webid, si false, n'utilise pas d'authentification
+        "multiuser": true, Si true, paramètre le serveur pour plusieurs utilisateurs, si false, un utilisateur par serveur
+        "mount": "/", Route sur laquelle le ldp sera monté sur le serveur
+        "configPath": "~/LDP/.config", Dossier ou la config initiale sera copiée (les templates et vues)
+        "configFile":"./config.json", Fichier de configuration du serveur
+        "dbPath": "~/LDP/.db", Chemin vers la db stockant les comptes utilisateurs et leur tokens
+        "sslKey": "../localhost.key", Clé privée SSL pour https
+        "sslCert": "../localhost.cert", certificat pour https
+        "corsProxy": "/proxy", route de l'endpoint proxy cors
+        "suffixAcl":".acl" Extension des acl
     }
     ```
     

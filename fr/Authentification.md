@@ -4,7 +4,6 @@ Authentification
 **Vous pouvez contribuer directement à cette documentation [ici](https://hackmd.io/xA03xNjdQfOqAzLXbghPlQ?both)**
 
 
-
 Nous allons toujours utiliser le nom de `alice` pour le nom d'utilisateur.
 Cela veut dire que le WebID de l'utilisateur sera `https://alice.nomdedomaine/profile/card#me`
 
