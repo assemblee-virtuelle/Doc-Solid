@@ -61,7 +61,7 @@ Pour tester le solid-serveur de manière locale en multi-user ( chaque utilisate
     Ex:
     ```JSON
     {
-        "root": "~/LDP", Chemin vers votre racine du LDP
+        "root": "~/LDP", //Chemin vers votre racine du LDP
         "port": "8443", port du serveur
         "serverUri": "https://localhost:8443", Uri du serveur
         "webid": true, Si true, utilise l'authentification webid, si false, n'utilise pas d'authentification
