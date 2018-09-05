@@ -3,8 +3,8 @@ Installation par ligne de commande
 
 **Vous pouvez contribuer directement à cette documentation [ici](https://hackmd.io/oUOJ2NkOTxO5RHJINas3Tw?both)**
 
-Aller a l'installation par :
-- [Test-Server](#installation-serveur-de-test)
+Aller a l'installation pour :
+- [Serveur de test](#installation-serveur-de-test)
 - [Normale](#installation-basique)
 
 
