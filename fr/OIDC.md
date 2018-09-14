@@ -79,7 +79,7 @@ Cette méthode est utile quand l'identity provider donnant les token ne peut ajo
 
 Si un URI de WebID n'est pas trouvé à la fois dans les déclarations `webid` ou `sub`, le Relying Party devrait procéder à une requête [UserInfo](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) par OpenID Connect, avec l'Access Token approprié qu'il reçoit avec le ID Token. Cette méthode est fournie dans le cas ou les utilisateurs n'ont pas de contrôle sur le contenu des ID Token envoyés par leur fournisseurs(Providers) et ne peuvent donc pas utiliser les méthodes citées précédemment. Cela peut être le cas par exemple si un utilisateur veut s'enregistrer a un Relying Party de WebID-OIDC en utilisant un fournisseur mainstream comme Google. Une fois que la réponse UserInfo est reçue par le Relying Party, la déclaration `website` standard devrait être utilisée par le RP(relying party) comme URI de WebID.
 
-## Confirmation du fournisseur du WebID
+## Confirmation du fournisseur de WebID
 
 #### Le problème
 
