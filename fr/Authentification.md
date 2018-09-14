@@ -37,24 +37,30 @@ Pour cela, éditez le fichier `config.json` crée pendant l'initialisation du se
 "forceUser":"https://alice.localhost:8443/profile/card#me"
 ```
 
-### Auth en utilisant le client `oidc-web`
+### Auth en utilisant le client `solid-auth-client`
 
-Premièrement, installez la librairie [`oidc-web`](https://github.com/solid/oidc-web) en utilisant `npm`: 
+Premièrement, installez la librairie [`solid-auth-client`](https://github.com/solid/solid-auth-client) en utilisant `npm`: 
 
 ```
-npm install oidc-web
+npm install solid-auth-client
 ```
 
 Ensuite, dans votre code HTML, insérez la ligne suivante 
 
 ```HTML
-<script src="./node_modules/oidc-web/dist/oidc-web.min.js"></script>
+<script src="./node_modules/solid-auth-client/dist/solid-auth-client.bundle.js"></script>
 ```
 
-Notes :
-* Des tests sont en cours visant a déterminer si il est impératif d'installer la librairie `oidc-web` ou de simplement récuperer le fichier `oidc-web-min.js`.
+OU
 
-* Le client web OIDC est exporté comme globale (`window.OIDC`) une fois que la librairie est chargée par le navigateur.
+```HTML
+<script src="https://solid.github.io/solid-auth-client/dist/solid-auth-client.bundle.js"></script>
+```
+
+Note: **Le fichier solid-auth-client.bundle.js peut être utilisé seul**
+
+* Dans le navigateur, la librairie est accessible par `solid.auth`
+* Sur Node, vous devez lancer un `npm install solid-auth-client` et la librairie sera accessible par `const auth = require('solid-auth-client')`
 
 Testons le login : 
 
@@ -63,11 +69,12 @@ Ajoutez ces lignes dans la balise `<script>` du code html de la page de login :
 ```HTML
 ...
 <script>
-  // Lib is exported as window.OIDC
-  var OIDCWebClient = OIDC.OIDCWebClient
-  var options = { solid: true }
-  var auth = new OIDCWebClient(options)
-  // auth is now a client instance
+solid.auth.trackSession(session => {
+  if (!session)
+    console.log('The user is not logged in')
+  else
+    console.log(`The user is ${session.webId}`)
+})
 </script>
 ```
 
@@ -78,62 +85,51 @@ Deux choses sont nécéssaires pour utiliser l'authentification OIDC :
 Savoir sur quel fournisseur l'utilisateur veut s'identifier est la chose la plus ardue de l'authentification décentralisée traditionnelle, et nécéssite soit une fenêtre de popup ou une rangée de boutons (Facebook, Google, Twitter, etc, etc) pour aider à la sélection du fournisseur (Ceci est connu sous le nom du "Nascar problem").
 Pour la suite de ce tutorial, l'`issuerUrl` sera `https://localhost:8443`
 
-2. Un appel a `auth.currentSession()` dès que la page est chargée (soit avec l'event DOMContentLoaded ou autre).
+2. Un appel a `auth.trackSession()` dès que la page est chargée (soit avec l'event DOMContentLoaded ou autre).
 Ceci fait deux choses - Ca détecte si un utilisateur s'est identifié (et a sa session sauvegardée dans le `localStore`), et aussi traite la redirection post-login
 
-Ajoutons l'appel à `auth.currentSession()` et voyons à quoi ressemble une session non authentifiée : 
+Ajoutons l'appel à `auth.trackSession()` et voyons à quoi ressemble une session non authentifiée : 
 
 ```javascript
-  // Lib is exported as window.OIDC
-  var OIDCWebClient = OIDC.OIDCWebClient
-  var options = { solid: true }
-  var auth = new OIDCWebClient(options)
-  // auth is now a client instance
+const auth = require('solid-auth-client');
+const { fetch } = auth;
+// auth is now a client instance
 
-  // Using a standard "document loaded" event listener
-  //  (equivalent to jQuery's $(document).ready())
-  // Trigger a currentSession() check on page load, in case user is logged in already
-  document.addEventListener('DOMContentLoaded', () => {
-    auth.currentSession()
-      .then(session => {
-        console.log(session)
-      })
+// Trigger a trackSession()
+auth.trackSession()
+  .then(session => {
+    if (!session){
+    console.log("Not logged in");
+    } else {
+        this.webid = session.webId;
+        this.fetch = auth.fetch;
+        //Parse the POD uris here
+    }
   })
 ```
 
-Dans la console, vous devriez voir quelque chose ressemblant à ça : 
+Dans le `else`, pour parser les URI du POD, il faut faire une requête `GET` sur son WebID, et récuperer
+l'URI correspondant aux Object suivant (dans un couple de triplets Subject Predicate Object)
 
-```
-Object { 
-  credentialType: "access_token", 
-  issuer: undefined, 
-  authorization: {}, 
-  sessionKey: undefined, 
-  idClaims: undefined, 
-  accessClaims: undefined 
-}
+```turtle
+<https://savincen.localhost:8443/profile/card#me>
+    solid:account </> ;  # link to the account uri
+    pim:storage </> ;    # root storage
 ```
 
 Maintenant passons a l'authentification (si la session est vide) : 
 
 ```javascript
- var OIDCWebClient = OIDC.OIDCWebClient
-  var options = { solid: true }
-  var auth = new OIDCWebClient(options)
-    
-  document.addEventListener('DOMContentLoaded', () => {
-    auth.currentSession()
-      .then(session => {
-        console.log('auth.currentSession():', session)
-
-        if (!session.hasCredentials()) {
-          console.log('Empty session, redirecting to login')
-          
-          auth.login('https://localhost:8443')
-        } else {
-          console.log('hasCredentials() === true')
-        } 
-      })
+auth.trackSession()
+  .then(session => {
+    if (!session){
+    console.log("Not logged in");
+    } else {
+        this.webid = session.webId;
+        this.fetch = auth.fetch;
+        //Parse the POD uris here
+        auth.login(/*account uri*/);
+    }
   })
 ```
 
@@ -141,33 +137,14 @@ Le login vous envoie vers une page HTML du serveur Solid, où votre username et 
 
 Après le login, vous serez redirigés vers votre page originale, et vous devriez avoir un objet Session avec vos credentials.
 
-Mais surtout, vous êtes maintenant en possession d'une fonction authentifiée `fetch` ayant vos credentials
-
-Ajoutons la variable globale `fetch` en lui passant la fonction fetch authentifiée : 
+Mais surtout, la variable fetch passée ci dessous :
 
 ```javascript
-  var OIDCWebClient = OIDC.OIDCWebClient
-  var options = { solid: true }
-  var auth = new OIDCWebClient(options)
-  var fetch  // set after currentSession()
-    
-  document.addEventListener('DOMContentLoaded', () => {
-    auth.currentSession()
-      .then(session => {
-        console.log('auth.currentSession():', session)
-
-        fetch = session.fetch
-                        
-        if (!session.hasCredentials()) {
-          console.log('Empty session, redirecting to login')
-          
-          auth.login('https://localhost:8443')
-        } else {
-          console.log('hasCredentials() === true')
-        } 
-      })
-  })
+const auth = require('solid-auth-client');
+const { fetch } = auth;
 ```
+
+envoie maintenant vos informations d'authentification (Id Token etc) au serveur solid cible
 
 Une fois authentifié, testez la fonction `fetch` dans la console du navigateur. 
 Par exemple, vous pouvez fetch le fichier `.acl` à la racine du POD d'alice : 
