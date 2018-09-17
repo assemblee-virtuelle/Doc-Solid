@@ -6,7 +6,7 @@ Installation & Authentification (Plusieurs serveurs)
 Pour installer un serveur solid, veuillez voir la [documentation d'installation](https://github.com/assemblee-virtuelle/Doc-Solid#installation-1) du node-solid-server. 
 L'installation de plusieurs serveurs n'a pas de points particuliers. 
 
-J'ai lancé les deux serveurs en utilisant les lignes de commande.
+J'ai lancé les deux serveurs en utilisant [les lignes de commandes](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#initialisation).
 Mon fichier de configuration pour les deux serveurs se présente de cette manière : 
 ```json
 { 
