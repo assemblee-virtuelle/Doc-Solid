@@ -66,6 +66,7 @@ Authentification
 - [Connexion](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#connexion)
 - [Explication WebID](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/WebID.md)
 - [WebID - OIDC](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/OIDC.md)
+- [Auth Distribuée](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/PlusieursServers.md)
 
 API (Edition de ressource)
 ---
