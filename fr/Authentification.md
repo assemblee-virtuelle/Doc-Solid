@@ -3,7 +3,7 @@ Authentification
 
 **Vous pouvez contribuer directement à cette documentation [ici](https://hackmd.io/xA03xNjdQfOqAzLXbghPlQ?both)**
 
-
+**Notes** : `solid-auth-client` n'est pas indispensable pour s'authentifier sur Solid, le `OIDCWebClient` permet de faire sensiblement les même choses (à savoir un Login OIDC et une méthode pour savoir si l'on est connectée ou non, renvoyant une session)
 Nous allons toujours utiliser le nom de `alice` pour le nom d'utilisateur.
 Cela veut dire que le WebID de l'utilisateur sera `https://alice.nomdedomaine/profile/card#me`
 
