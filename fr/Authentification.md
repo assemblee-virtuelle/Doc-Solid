@@ -124,11 +124,11 @@ auth.trackSession()
   .then(session => {
     if (!session){
     console.log("Not logged in");
+    auth.login(/*account uri*/);
     } else {
         this.webid = session.webId;
         this.fetch = auth.fetch;
         //Parse the POD uris here
-        auth.login(/*account uri*/);
     }
   })
 ```
