@@ -2,7 +2,7 @@ Documentation Api
 ===
 
 Le node-solid-server est bâti sur le micro framework javascript `Express`. 
-Le serveur propose une api pour intéragir avec le LDP selon la norme LDP. *
+Le serveur propose une api pour intéragir avec le LDP selon la norme LDP.
 
 L'api du node-solid-server commence par l'attribution de handlers à certaines routes
 
@@ -21,7 +21,7 @@ L'objet `router` est un objet du framework `Express` paramétrant les routes
 La fonction `allow` est une fonction du node-solid-server. 
 Cette fonction retourne une fonction `allowHandler` et fait du travail préliminaire de
 gestion de la ressource ciblée. Elle vérifie si la ressource existe, cherche et obtient son ACL, 
-et vérifie si l'utilisateur est autorisé a accèder a la ressource. TODO: a détailler
+et vérifie si l'utilisateur est autorisé a accèder a la ressource.
 
 Le dernier argument de chaque méthode est une fonction `handler`. Les fonctions handler sont spécifique a chaque requête
 et se trouvent dans leurs fichiers respectifs (le handler pour la requête HTTP `get` se trouve dans le fichier `/handlers/get.js`)
@@ -103,4 +103,31 @@ renvoie une erreur `406` avec le message `'Cannot serve requested type: ' + cont
 
 ### HTTP PATCH
 
+Le handler `patch` traite les requêtes HTTP PATCH. 
+Le handler commence par extraire les données de la requête, comme le texte, l'uri et le `content-type`.
+Il vérifie aussi si la ressource cible existe, lit son graph et vérifie les permissions pour le patch.
+Pour lire les données de la ressource cible il utilise `fs.readFile` suivi de `$rdf.parse` de la libraire `rdflib`.
+Pour traiter la requête patch, il utilise des parseurs internes a Solid en fonction du `content-type` passé : 
+`Content-Type:application/sparql-update` a comme parseur `sparql-update-parser.js`
+`Content-Type:text/n3` a comme parseur `n3-patch-parser.js`
+
+Il faut avoir des accès de lecture et d'écriture pour DELETE et des accès de lecture seulement pour WHERE par exemple.
+Un DELETE WHERE requiert accès à la lecture et l'écriture
+explication : 
+
+```
+  // Read access is required for DELETE and WHERE.
+  // If we would allows users without read access,
+  // they could use DELETE or WHERE to trigger 200 or 409,
+  // and thereby guess the existence of certain triples.
+  // DELETE additionally requires write access.
+```
+
+La requête patch parsée est ensuite ajoutée au graph de la ressource grace a un `$rdf.serialize()` convertissant un graph 
+objet en triplets au format texte, et en l'ajoutant directement dans le fichier grâce à un `fs.writeFile`.
+Si aucune erreur est survenue, le serveur renvoie un message disant `Patch applied successfully.`
+TODO: a détailler
+
+
+### Fonction Allow
 
