@@ -22,6 +22,14 @@ La fonction `allow` est une fonction du node-solid-server.
 Cette fonction retourne une fonction `allowHandler` et fait du travail préliminaire de
 gestion de la ressource ciblée. Elle vérifie si la ressource existe, cherche et obtient son ACL, 
 et vérifie si l'utilisateur est autorisé a accèder a la ressource.
+L'ACL de la ressource cible est stocké dans `req.acl`, c'est une classe `ACLChecker`.
+Et la fonction déterminant si l'agent est autorisé est une méthode de la classe `ACLChecker`, renvoyant une 
+promesse accomplie si l'utilisateur/l'agent est autorisé, sinon renvoie une erreur HTTP.
+Cette méthode vérifie les permissions pour le `mode` passé en paramètre dans la fonction `allow`. 
+Si la ressource ciblée est un ACL, la méthode change le `mode` en `Control`
+(Par exemple une requête PUT ayant comme paramètre `Write`, sera remplacé en `Control` si la ressource cible est un ACL)
+Ensuite il vérifiera les permissions en récupèrant l'ACL de la ressource, et enfin vérifiera les permissions de l'utilisateur
+sur la ressource cible selon le `mode` passé. 
 
 Le dernier argument de chaque méthode est une fonction `handler`. Les fonctions handler sont spécifique a chaque requête
 et se trouvent dans leurs fichiers respectifs (le handler pour la requête HTTP `get` se trouve dans le fichier `/handlers/get.js`)
@@ -127,7 +135,3 @@ La requête patch parsée est ensuite ajoutée au graph de la ressource grace a 
 objet en triplets au format texte, et en l'ajoutant directement dans le fichier grâce à un `fs.writeFile`.
 Si aucune erreur est survenue, le serveur renvoie un message disant `Patch applied successfully.`
 TODO: a détailler
-
-
-### Fonction Allow
-
