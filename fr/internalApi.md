@@ -50,6 +50,9 @@ Les handler utilisent tous la classe `LDP` gérant les ressources du filesystem.
 La classe `LDP` fournit des méthodes pour chacune des requêtes, les méthodes sont des callback (ou ont une fonction callback en argument, je sais pas comment le dire TODO:)
 La classe LDP est passée dans la requête et se trouve dans `req.app.locals.ldp`, `req` étant la variable de requête HTTP
 
+Pour lire les fichiers sur le filesystem, le serveur utilise le package Node `fs`.
+Pour traduire les triplets en graph ou inversement, le serveur utilise [`rdflib.js`](https://github.com/linkeddata/rdflib.js)
+
 ### HTTP COPY
 
 Le handler `copy` traite les requêtes HTTP COPY important la ressource spécifiée dans le header `Source`
@@ -141,4 +144,3 @@ explication :
 La requête patch parsée est ensuite ajoutée au graph de la ressource grace a un `$rdf.serialize()` convertissant un graph 
 objet en triplets au format texte, et en l'ajoutant directement dans le fichier grâce à un `fs.writeFile`.
 Si aucune erreur est survenue, le serveur renvoie un message disant `Patch applied successfully.`
-TODO: a détailler
