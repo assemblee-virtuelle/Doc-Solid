@@ -18,6 +18,9 @@ L'objet `router` est un objet du framework `Express` paramétrant les routes
   router.delete('/*', allow('Write'), del)
 ```
 
+
+### Fonction Allow
+
 La fonction `allow` est une fonction du node-solid-server. 
 Cette fonction retourne une fonction `allowHandler` et fait du travail préliminaire de
 gestion de la ressource ciblée. Elle vérifie si la ressource existe, cherche et obtient son ACL, 
@@ -30,6 +33,8 @@ Si la ressource ciblée est un ACL, la méthode change le `mode` en `Control`
 (Par exemple une requête PUT ayant comme paramètre `Write`, sera remplacé en `Control` si la ressource cible est un ACL)
 Ensuite il vérifiera les permissions en récupèrant l'ACL de la ressource, et enfin vérifiera les permissions de l'utilisateur
 sur la ressource cible selon le `mode` passé. 
+
+## Les handlers de requête HTTP
 
 Le dernier argument de chaque méthode est une fonction `handler`. Les fonctions handler sont spécifique a chaque requête
 et se trouvent dans leurs fichiers respectifs (le handler pour la requête HTTP `get` se trouve dans le fichier `/handlers/get.js`)
