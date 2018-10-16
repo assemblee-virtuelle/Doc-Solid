@@ -1,6 +1,8 @@
 Documentation Api
 ===
 
+Pour contribuer directement à la documentation : https://hackmd.io/o2EKUWwTSSqnS7ioopayDw#
+
 Le node-solid-server est bâti sur le micro framework javascript `Express`. 
 Le serveur propose une api pour intéragir avec le LDP selon la norme LDP.
 
