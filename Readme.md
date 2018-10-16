@@ -86,7 +86,7 @@ WAC (Web ACLs)
 Comment ça marche ? (à l'intérieur)
 ---
 
-- ~~API~~
+- [API](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/internalApi.md)
 - ~~ACLs~~
 - ~~Authentification~~
 
