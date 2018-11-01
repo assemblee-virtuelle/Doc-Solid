@@ -99,6 +99,8 @@ Comment ça marche ? (à l'intérieur)
 
 **Solid Project** : https://github.com/solid/
 
+W3 Solid interest group: https://www.w3.org/community/solid/
+
 **Node-Solid-Server** : https://github.com/solid/node-solid-server
 
 WAC Acl spec : https://github.com/solid/web-access-control-spec
@@ -107,4 +109,4 @@ API doc : https://github.com/solid/solid-spec/blob/master/api-rest.md
 
 Dimitri Zagidulin's installation tutorial : https://hackmd.io/onfGBqczTzClCd2DUKViEg
 
-
+**Client project** : https://github.com/assemblee-virtuelle/TestsWebComponentSolid
