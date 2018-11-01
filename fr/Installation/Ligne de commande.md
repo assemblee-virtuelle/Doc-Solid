@@ -80,7 +80,11 @@ Pour tester le solid-serveur de manière locale en multi-user ( chaque utilisate
 * Démarrez le serveur solid en mode test (Enlève la vérification des certificats SSL, pour pouvoir travailler avec les certificats auto-signés)
 
     ```
-    ./bin/solid-test start -v
+    bin/solid-test start -v
+    ```
+    ou
+    ```
+    DEBUG=solid:* bin/solid-test start
     ```
 
 * Créez un compte pour `alice`. Allez sur la page `https://localhost:8443` dans votre navigateur. Cliquez sur `Register` et tapez `alice` pour l'username. Le register crée un dossier de compte d'utilisateur (POD) dans le chemin du dossier fourni dans `root`.
