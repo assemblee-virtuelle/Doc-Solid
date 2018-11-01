@@ -112,3 +112,6 @@ Dimitri Zagidulin's installation tutorial : https://hackmd.io/onfGBqczTzClCd2DUK
 **Client project** : https://github.com/assemblee-virtuelle/TestsWebComponentSolid
 
 Chat : https://gitter.im/solid/chat
+
+Forum : https://forum.solidproject.org
+
