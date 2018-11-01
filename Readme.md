@@ -110,3 +110,5 @@ API doc : https://github.com/solid/solid-spec/blob/master/api-rest.md
 Dimitri Zagidulin's installation tutorial : https://hackmd.io/onfGBqczTzClCd2DUKViEg
 
 **Client project** : https://github.com/assemblee-virtuelle/TestsWebComponentSolid
+
+Chat : https://gitter.im/solid/chat
