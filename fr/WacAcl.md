@@ -58,10 +58,10 @@ Un exemple d'ACL pour un conteneur :
     # defaultForNew says: this authorization (the statements above) will also
     #   be inherited by any resource within that container that doesn't have its
     #   own ACL.
-    acl:defaultForNew <https://alice.databox.me/docs/>.
+    acl:default <https://alice.databox.me/docs/>.
 ```
 
-**Note :** Le prédicat `acl:defaultForNew` sera bientôt renommé par `acl:default`, à la fois dans la spec et dans l'implémentation des serveurs. La sémantique, comme décrite ici, ne changera pas. 
+**Note :** Le prédicat `acl:default` était appellé `acl:defaultForNew`, il a été changé récemment.
 
 ## ACL de ressource individuelle
 
