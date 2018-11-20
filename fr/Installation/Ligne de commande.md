@@ -27,15 +27,6 @@ Cela veut dire que le WebID de l'utilisateur sera `https://alice.localhost:8443/
 
 ### Prérequis
 
-Pour tester le solid-serveur de manière locale en multi-user ( chaque utilisateur ayant son propre [POD](https://github.com/solid/webid-oidc-spec#pod) ), une modification du fichier `/etc/hosts` en ajoutant une entrée pour chaque sous domaine d'utilisateur est nécéssaire. 
-`/etc/hosts` ne supporte pas la syntaxe du genre '127.0.0.1 *.localhost'.
-
-* Pour que votre OS reconnaisse l'addresse `alice.localhost`, la ligne suivante doit être ajoutée au fichier `/etc/hosts` : 
-
-    ```
-    127.0.0.1 alice.localhost
-    ```
-
 * Créez un set de certificats auto-signés par les commandes : 
 
     ```
