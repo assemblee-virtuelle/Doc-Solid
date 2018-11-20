@@ -14,7 +14,7 @@ Installation
 - [Docker](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/docker.md)
 - ~~Librairie~~
 
-Authentification
+Autentification
 ---
 
 - [Inscription](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Authentification.md#authentification)
