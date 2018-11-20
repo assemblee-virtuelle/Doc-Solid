@@ -10,7 +10,7 @@ Installation
 ---
 
 - ~~Ligne de commande(Installation normale)~~
-- [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-serveur-de-test) (Serveur de test)
+- [Ligne de commande](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/Ligne%20de%20commande.md#installation-par-ligne-de-commande) (Serveur de test)
 - [Docker](https://github.com/assemblee-virtuelle/Doc-Solid/blob/master/fr/Installation/docker.md)
 - ~~Librairie~~
 
