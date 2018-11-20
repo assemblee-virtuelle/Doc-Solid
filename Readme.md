@@ -4,52 +4,7 @@ Documentation Node-Solid-Server
 ~~`Crossed`~~ **means no doc for the moment**
 
 ## Language :
-### [English](#english) - [Français](#français)
-
-# English
-
-Installation
----
-
-- ~~Command line~~
-- ~~Command line(test-server)~~
-- ~~Library~~
-
-Authentication
----
-
-- ~~Register~~
-- ~~Login~~
-- ~~WebID Explained~~
-- ~~WebID - OIDC~~
-
-API (Resource edition)
----
-
-- ~~Create~~
-- ~~Read~~
-- ~~Edit~~
-- ~~Delete~~
-
-WAC (Web ACLs)
----
-
-- ~~Overview~~
-- ~~Edit a resource's Acl~~
-
-How do they work (Internally)
----
-
-- ~~API~~
-- ~~ACLs~~
-- ~~Authentication~~
-
-
-**You can contribute to the documentation directly [here](https://hackmd.io/jUyCPhlSQfmgh6vfn1ZFaA?both)**
-
----
-
-# Français
+### [Français](#français)
 
 Installation
 ---
