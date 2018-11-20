@@ -55,7 +55,7 @@ Un exemple d'ACL pour un conteneur :
     acl:mode
         acl:Read, acl:Write, acl:Control;
 
-    # defaultForNew says: this authorization (the statements above) will also
+    # default says: this authorization (the statements above) will also
     #   be inherited by any resource within that container that doesn't have its
     #   own ACL.
     acl:default <https://alice.databox.me/docs/>.
@@ -220,7 +220,7 @@ a vcard:Group;
 
 **Notes** : 
 
-Je n'ai pas encore testé les groupes de permissions, et il me semble qu'il y a encore quelques bugs pour cette tech. 
+Je n'ai pas encore testé les groupes de permissions.
 
 
 ## Non supporté par choix
